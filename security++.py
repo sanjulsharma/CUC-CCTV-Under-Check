@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 from playsound import playsound
-
+from datetime import datetime
 
 #Write down conf, nms thresholds,inp width/height
 confThreshold = 0.25
@@ -11,13 +11,13 @@ inpHeight = 416
 
 
 #Load names of classes and turn that into a list
-classesFile = "coco.names"
-detect= "anomalies"
+classesFile = "classes to detect"
+anomalies_detect= "anomalies"
 classes = None
 anomaly=None
 with open(classesFile,'rt') as f:
     classes = f.read().rstrip('\n').split('\n')
-with open(detect,'rt') as f:
+with open(anomalies_detect,'rt') as f:
     anomaly = f.read().rstrip('\n').split('\n')
 
 #Model configuration
@@ -82,7 +82,9 @@ def drawPred(classId, conf, left, top, right, bottom):
         i=0
         while i<len(anomaly):
             if classes[classId]==anomaly[i]:
+                print(classes[classId])
                 playsound('beep.mp3')
+                print(datetime.now())
                 break
             i+=1
     #A fancier display of the label from learnopencv.com 
