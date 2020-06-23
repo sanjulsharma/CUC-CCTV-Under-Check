@@ -30,6 +30,6 @@ The algo is written for webcam you can also upload it on your CCTV.
 4) Open security++.py and run it.
 
 # Note:
- You can adjust list of anomalies as per your convenience by changing the the list from "anomalies" file. This model can only detect 80 classes which are enlisted in "classes to detect" file.
+ You can adjust the list of anomalies as per your convenience by changing the the list from "anomalies" file. This model can only detect 80 classes which are enlisted in "classes to detect" file.
  
 # Now your security system is never OFF duty.
